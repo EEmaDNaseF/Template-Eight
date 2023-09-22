@@ -734,3 +734,105 @@ a {
     border-width: 170px 500px 170px 0;
 }
 /* End Features */
+
+
+/* Start Testimonials */
+.testimonials {
+    padding: 40px 0;
+    background-color: #ddd;
+}
+.testimonials .container .main-title {
+    text-align: center;
+    border: 2px solid black;
+    width: fit-content;
+    margin: 100px auto;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
+    transition: all .5s;
+}
+.testimonials .container .main-title::before,
+.testimonials .container .main-title::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+.testimonials .container .main-title::before {
+    left: -30px;
+}
+.testimonials .container .main-title::after {
+    right: -30px;
+}
+.testimonials .container .main-title:hover::before {
+    animation: move-right linear .5s forwards;
+
+}
+.testimonials .container .main-title:hover {
+    color: white;
+    border-color: white;
+    transition-delay: .5s;
+}
+
+@keyframes move-right {
+    50% {
+        left: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100% {
+        border-radius: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+    }
+}
+.testimonials .container .main-title:hover::after {
+    animation: move-left linear .5s forwards;
+
+}
+@keyframes move-left {
+    50% {
+        right: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100% {
+        border-radius: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+    }
+}
+.testimonials .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) );
+    gap: 30px;
+}
+.testimonials .grid .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+.testimonials .grid .card p {
+    color: #666;
+}
+.testimonials .grid .card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    right: 0;
+    border: 10px solid #ddd;
+}
+
+
+/* End Testimonials */
