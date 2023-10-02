@@ -1138,3 +1138,133 @@ a {
 }
 
 /* End Servecis */
+
+/* Start Skills */
+.skills {
+    padding: 40px 0;
+    position: relative;
+}
+.skills .container .main-title {
+    text-align: center;
+    border: 2px solid black;
+    width: fit-content;
+    margin: 100px auto;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
+    transition: all .5s;
+}
+.skills .container .main-title::before,
+.skills .container .main-title::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+.skills .container .main-title::before {
+    left: -30px;
+}
+.skills .container .main-title::after {
+    right: -30px;
+}
+.skills .container .main-title:hover::before {
+    animation: move-right linear .5s forwards;
+
+}
+.skills .container .main-title:hover {
+    color: white;
+    border-color: white;
+    transition-delay: .5s;
+}
+
+@keyframes move-right {
+    50% {
+        left: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100% {
+        border-radius: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+    }
+}
+.skills .container .main-title:hover::after {
+    animation: move-left linear .5s forwards;
+
+}
+@keyframes move-left {
+    50% {
+        right: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100% {
+        border-radius: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+    }
+}
+.skills .grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.skills .grid .right .progress {
+    width: 100%;
+    height: 30px;
+    background-color: #d5d5d5;
+    position: relative;
+    margin-bottom: 40px;
+}
+.skills .grid .right {
+    width: 50%;
+}
+.skills .grid .right .bar {
+    position: absolute;
+    height: 100%;
+    background-color: var(--main-color);
+}
+.skills .grid .right .bar1 {
+    width: 80%;
+    position: relative;
+}
+
+.skills .grid .right .bar2 {
+    width: 85%;
+}
+.skills .grid .right .bar3 {
+    width: 70%;
+}
+.skills .grid .right .bar4 {
+    width: 60%;
+}
+
+.skills .grid .right .skill h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.skills .grid .right .skill h3 span {
+    color: var(--main-color);
+    
+}
+@media (max-width:991px) {
+    .skills .grid .left {
+        display: none;
+    }
+    .skills .grid {
+        flex-direction: column;
+    }
+    .skills .grid .right {
+        width: 100%;
+    }
+}
+/* End Skills */
