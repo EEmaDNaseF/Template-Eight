@@ -976,3 +976,165 @@ a {
     padding-left: 80px;
 }
 /* End Team-Member */
+
+
+/* Start Servecis */
+.servecis {
+    padding: 40px 0;
+    position: relative;
+    background-color: #ddd;
+}
+.servecis .container .main-title {
+    text-align: center;
+    border: 2px solid black;
+    width: fit-content;
+    margin: 100px auto;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
+    transition: all .5s;
+}
+.servecis .container .main-title::before,
+.servecis .container .main-title::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+.servecis .container .main-title::before {
+    left: -30px;
+}
+.servecis .container .main-title::after {
+    right: -30px;
+}
+.servecis .container .main-title:hover::before {
+    animation: move-right linear .5s forwards;
+
+}
+.servecis .container .main-title:hover {
+    color: white;
+    border-color: white;
+    transition-delay: .5s;
+}
+
+@keyframes move-right {
+    50% {
+        left: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100% {
+        border-radius: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+    }
+}
+.servecis .container .main-title:hover::after {
+    animation: move-left linear .5s forwards;
+
+}
+@keyframes move-left {
+    50% {
+        right: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100% {
+        border-radius: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+    }
+}
+.servecis .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) );
+    gap: 30px;
+}
+.servecis .grid .card {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: all .5s;
+    position: relative;
+    counter-increment: servecis;
+}
+.servecis .grid .card::before {
+    position: absolute;
+    content: "";
+    background-color: var(--main-color);
+    height: 3px;
+    width: 0;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    transition: all .5s;
+}
+.servecis .grid .card .top svg{
+    color: #ddd;
+    font-size: 74px;
+    margin: 30px auto 20px;
+}
+.servecis .grid .card .top h3 {
+    color: var(--main-color);
+    font-size: 24px;
+    font-weight: bolder;
+    margin-bottom: 40px;
+}
+.servecis .grid .card .top{
+    text-align: center;
+}
+.servecis .grid .card .bot{
+    background-color: #f9f9f9;
+    padding: 15px;
+    text-align: right;
+    position: relative;
+}
+.servecis .grid .card .bot h2 {
+    color: white;
+    font-size: 30px;
+    background-color: var(--main-color);
+    position: relative;
+    z-index: 1;
+}
+.servecis .grid .card .bot a {
+    color: var(--main-color-alt);
+}
+.servecis .grid .card:hover {
+    transform: translateY(-15px);
+}
+.servecis .grid .card:hover::before {
+    width: 100%;
+}
+.servecis .grid .card .bot::before {
+    content: "0" counter(servecis);
+    background-color: var(--main-color);
+    color: white;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    font-size: 30px;
+    padding-right: 15px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.servecis .grid .card .bot::after {
+    content: "";
+    background-color: #d5d5d5;
+    left: 80px;
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    width: 50px;
+    transform: skew(-30deg);
+}
+
+/* End Servecis */
